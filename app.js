@@ -3,8 +3,11 @@ let endTime = null;
 let timePattern = null;
 let startAutomatically = true;
 let pause = false;
+let timeLeft = 0;
 const clickSound = new Audio('click.mp3')
 
+
+// This code is a fucking turd and mess, but I'm too lazy to fix it now.
 
 function updateTime(){
     const now = new Date().getTime();
@@ -13,8 +16,8 @@ function updateTime(){
     } else {
         playClick();
         if(!startAutomatically) {
-            writeToTemplate("Press continue when ready");
             stopTimer();
+            writeToTemplate("Press continue when ready");
         } else {
             runTimer();
         }
@@ -69,5 +72,22 @@ function playClick() {
     if(playSound) {
         clickSound.play().then();
     }
+}
+
+function pauseTimer() {
+    if (pause) {
+        pause = false;
+        endTime = new Date().getTime() + timeLeft;
+        timeLeft = 0;
+        interval = setInterval(updateTime,100);
+    } else {
+        pause = true;
+        timeLeft = endTime - new Date().getTime();
+        clearInterval(interval);
+    }
+}
+
+function updateCheckboxes() {
+    startAutomatically = document.getElementById('auto_start').checked
 }
 
