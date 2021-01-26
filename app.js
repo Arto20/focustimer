@@ -26,10 +26,13 @@ function updateTime(){
 }
 
 function setTimer() {
-    const work_time = parseInt(document.getElementById('work_time').value) * 1000 * 60;
-    const short_break = parseInt(document.getElementById('short_break').value) * 1000 * 60;
-    const long_break = parseInt(document.getElementById('long_break').value) * 1000 * 60;
-    startAutomatically = document.getElementById('auto_start').checked
+    // lol.
+    let work_time = parseInt(document.getElementById('work_time').value) * 1000 * 60;
+    let short_break = parseInt(document.getElementById('short_break').value) * 1000 * 60;
+    let long_break = parseInt(document.getElementById('long_break').value) * 1000 * 60;
+    work_time = !isNaN(work_time) ? work_time : parseInt(document.getElementById('work_time').placeholder) * 1000 * 60
+    short_break = !isNaN(short_break) ? short_break : parseInt(document.getElementById('short_break').placeholder) * 1000 * 60
+    long_break = !isNaN(long_break) ? long_break : parseInt(document.getElementById('long_break').placeholder) * 1000 * 60
 
     // add here tuples ("work time": work time, "short break": short_break) ?? So I can communicate "press continue
     // to start work time".
