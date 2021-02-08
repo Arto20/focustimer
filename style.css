@@ -1,7 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+:root {
+    /* default values */
+    --background: #FFF;
+    --text: #000;
+    --hover: #444;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background: var(--background);
+    color: var(--text);
+    transition: background 2s,color 2s;
+    height: 100vh;
+}
+
+button {
+    height: 3em;
+    width: 10em;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    text-align: center;
+    font-size: 3em;
+    width: 4em;
+}
+
+input:disabled {
+    background-color: transparent;
+}
+
+input:focus {
+    outline: none;
+}
+
+h1 {
+    font-size: 5em;
+    text-align: center;
+    transition: 2s;
+}
+
 .container {
+    width: 960px;
+    height: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
     margin: auto;
 }
 
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.buttons button {
+    border: none;
+    background-color: transparent;
+}
+
+.buttons button i {
+    color: var(--text)
+}
+
+.buttons button:hover i {
+    color: var(--hover);
+    cursor: pointer;
+}
+
+.switches {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.switch {
+    font-size: 2em;
+    padding: 0.5em;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.row i {
+    padding: 1em;
+}
+.row i:hover {
+    cursor: pointer;
+}
+
+.row input {
+    border: none;
+    width: 2em;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+.switch:hover {
+    color: var(--hover);
+    cursor: pointer;
+}
+
+.time {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.time_value {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.time_value label {
+    padding-bottom: 0.5em;
+}
+
+@media (max-width: 960px) {
+    .container {
+        width: 100%;
+    }
+
+    .time {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .time_value {
+        padding-bottom: 1em;
+    }
+
+    .time_value:last-of-type {
+        padding-bottom: 0;
+    }
+}
