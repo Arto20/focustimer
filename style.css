@@ -144,6 +144,7 @@ h1 {
 @media (max-width: 960px) {
     .container {
         width: 100%;
+        justify-content: flex-start;
     }
 
     .time {
@@ -151,8 +152,19 @@ h1 {
         align-items: center;
     }
 
+    h1 {
+        padding-top: 2em;
+        font-size: 2.5em;
+        text-align: center;
+        transition: 2s;
+    }
+
+    .row i {
+    padding: 0.2em;
+}
+
     .time_value {
-        padding-bottom: 1em;
+        padding-bottom: 0.5em;
     }
 
     .time_value:last-of-type {
