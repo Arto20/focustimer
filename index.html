@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Focus timer</title>
+    <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
+
+<script src="fittext.js" type="text/javascript"></script>
+
 
 <body>
     <div class="switches">
@@ -55,12 +59,14 @@
     <p class="buttons">
         <button onclick="setTimer()" id="play" title="Start"><i class="fas fa-play fa-5x"></i></button>
         <button onclick="stopTimer()" id="stop" title="Stop"><i class="fas fa-stop fa-5x"></i></button>
-        <button onclick="runTimer()" id="continue" title="Continue"><i class="fas fa-play fa-5x"></i><i class="fas fa-play"></i></i></button>
+        <button onclick="runTimer()" id="continue" title="Continue"><i class="fas fa-play fa-5x"></i><i class="fas fa-play fa-5x"></i></i></button>
         <button onclick="pauseTimer()" id="pause" title="Pause"><i class="fas fa-pause fa-5x"></i></button>
     </p>
 
 </div>
+<script>
+  window.fitText( document.getElementById("timer") );
+</script>
 </body>
 <script src="app.js" type="text/javascript"></script>
-
 </html>
