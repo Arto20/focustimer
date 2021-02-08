@@ -59,12 +59,16 @@ h1 {
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
-    height: fit-content;
 }
 
 .buttons button {
     border: none;
     background-color: transparent;
+    padding-right: 4em;
+}
+
+.buttons button:last-of-type {
+    padding-right: 0;
 }
 
 .buttons button i {
